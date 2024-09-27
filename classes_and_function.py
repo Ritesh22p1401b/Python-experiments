@@ -12,6 +12,7 @@ class Student:
         self.date_of_birth=date_of_birth
         self.contact_number=Contact_number
 
+
     def display(self):
         print("Roll_no=",self.roll_no)
         print("name=",self.name)
@@ -21,7 +22,7 @@ class Student:
         print("contact_number=",self.contact_number)
 
 
-
+students=[]
 # how many student details we want to entered
 number_of_student=int(input("enter the number of student we want to store="))
 
@@ -34,6 +35,11 @@ for i in range(number_of_student):
     Contact_number=int(input("enter the contact number of student="))
 
     s1=Student(roll_no,name,student_class,grade,date_of_birth,Contact_number) # creating s1 object for class Student 
+    students.append(s1)
 
-print(s1.__dict__) # printing the student details in dictionary form .
-#print(s1.display())
+
+
+#print(s1.__dict__) # printing the student details in dictionary form .
+
+for student in students:
+    student.display()
