@@ -12,7 +12,7 @@ colors=['g','r','b','c','b']
 plt.pie(slices,labels=labels,colors=colors,
     startangle=90,shadow=True,explode=(0,0,0,0,0.05),autopct='%1.f%%')
 
-plt.legend()
+plt.legend(loc='upper right')
 plt.title('Market Share in Four wheeler Manufacturing')
 plt.show()
 

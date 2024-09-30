@@ -11,9 +11,9 @@ b=np.array([8,16,24,32,40,48])
 plt.bar(a,b,label='Air India',width=3,color='r')
 
 plt.legend()
-plt.xlabel('Days')
-plt.ylabel('Flight Hours (Hrs)')
-plt.title('Flight Data')
+plt.xlabel('Days',fontname='serif',fontsize='14')
+plt.ylabel('Flight Hours (Hrs)', fontname='serif',fontsize='14')
+plt.title('Flight Data',fontname='serif',fontsize='14')
 plt.show()
 
 
