@@ -1,8 +1,7 @@
-
 import tkinter as tk
 from tkinter import *
 window=tk.Tk()
-window.title("This is Application Window")
+window.title("This is Applicatiom Window")
 window.geometry("475x500")
 
 
@@ -14,11 +13,47 @@ def clear():
     screen.delete(0,"end")
 
 
+def get_sign(sign,expression):
+    value=expression.split(sign,1)
+    return value
+
+def add(a,b):
+    return a+b
+
+
+
+def equal():
+    expression=screen.get()
+    clear()
+    try:
+
+        if expression.find("+")>0:
+            data=get_sign("+",expression)
+            answer=add(data[0],data[1])
+
+        elif expression.find("hello")>0:
+            p="hello"
+            return p
+
+
+
+        screen.insert(0,answer)
+
+    except:
+        screen.insert(0,"Error")
+
+
+
+
+
+
 
 frame = Frame(window, width=300, height=200, bg="gray11",borderwidth=2,
 highlightbackground="black", highlightcolor="gray11", highlightthickness=2)
 frame.pack_propagate(False)  # Prevent the frame from resizing to fit its contents
 frame.pack(expand=True) 
+
+
 
 
 
@@ -31,14 +66,8 @@ scvalue.set("")
 
 
 
-frame1 = Frame(window, bg="orange",borderwidth=2, width=100, height=50)
-# highlightbackground="black", highlightcolor="gray11", highlightthickness=2)
-frame1.pack_propagate(False)  # Prevent the frame from resizing to fit its contents
-frame1.pack(expand=True) 
 
-
-
-button1=Button(frame,text="place",command=lambda:press("Buton created using place method"),foreground="DarkOrange1",bg="gray1")
+button1=Button(frame,text="hello",command=lambda:press("hello"),foreground="DarkOrange1",bg="gray1")
 button1.place(relx=1.0,x=-100,y=100,anchor="ne")
 
 
@@ -46,13 +75,20 @@ button2=Button(frame,text="clear",command=clear)
 button2.place(relx=1.0,x=-200,y=100,anchor="ne")
 
 
-button=Button(frame,text="pack",command=lambda:press("button created by using pack method"))
+button2=Button(frame,text="+",command=lambda:press("+"))
+button2.place(relx=1.0,x=-250,y=100,anchor="ne")
+
+
+button2=Button(frame,text="=",command=equal)
+button2.place(relx=1.0,x=-250,y=130,anchor="ne")
+
+button=Button(frame,text="world",command=lambda:press("world"))
 button.pack(side=BOTTOM,pady=5)
 
 
-button5=Button(frame1, text="grid button",command=lambda:press("button with grid"))
-button5.grid(row=5,column=3)
+
 
 
 
 window.mainloop()
+
